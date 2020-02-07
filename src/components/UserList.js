@@ -1,4 +1,6 @@
 import React from "react";
+import "../styles/UserList.css"
+
 
 function UserList(props) {
     return (
