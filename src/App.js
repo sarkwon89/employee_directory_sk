@@ -19,6 +19,16 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
+  handleInputChange = event => {
+    const value = event.target.value;
+    const name = event.target.name;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  
+
   render() {
 
     return (
@@ -26,7 +36,10 @@ class App extends Component {
         <Title />
         <div className="flex">
           <div className="formbox">
-          <Search />
+          <Search
+           value={this.state.search}
+           handleInputChange={this.handleInputChange} 
+           />
           </div>
           <div className="listbox">
           {this.state.result.map((element, index) => (
