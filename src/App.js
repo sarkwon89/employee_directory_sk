@@ -8,7 +8,7 @@ class App extends Component {
 
   state = {
     result: [],
-    randomuser: ""
+    search: ""
   };
 
   componentDidMount() {
@@ -20,13 +20,17 @@ class App extends Component {
   render() {
 
     return (
-      <div>
+      <div className="container">
         <Title />
         {this.state.result.map((element,index) => (
           <UserList
             key={index}
-            name={element.name.first}
-            picture={element.picture.thumbnail}
+            name={element.name.first + " " + element.name.last}
+            picture={element.picture.medium}
+            city = {element.location.city}
+            email = {element.email}
+            state = {element.location.state}
+
           />
         ))}
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
+import "../styles/Title.css"
 
-function Title(props) {
+function Title() {
     return (
         <header className="title">
             <h1>Employee Directory</h1>
