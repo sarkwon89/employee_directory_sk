@@ -4,7 +4,7 @@ import "../styles/Search.css"
 
 function Search(props){
     return(
-        <form>
+        <form onSubmit={(e)=>e.preventDefault()}>
         <div className="form-group">
           <label htmlFor="search">Search:</label>
           <input

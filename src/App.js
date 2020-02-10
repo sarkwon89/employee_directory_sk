@@ -28,18 +28,20 @@ class App extends Component {
 
     //creating a new array by taking in new search value by using filter
     let newResult = this.state.result.filter(employee =>{
-      return employee.name.first.toLowerCase().indexOf(this.state.search)>-1 || employee.name.last.toLowerCase().indexOf(this.state.search)>-1
+      // console.log(employee.name.first.toLowerCase().indexOf(this.state.search), employee.name,employee.name.last.toLowerCase().indexOf(this.state.search))
+      return employee.name.first.toLowerCase().indexOf(value)>-1 || employee.name.last.toLowerCase().indexOf(value)>-1
     })
     //this updates the existing result state
     this.setState({
       result: newResult
     })
     //conditional statement to load the original results once search length is at 0
-    if (this.state.search.length===0){
+    if (value.length===0){
       API.randomuser()
       .then(res => this.setState({ result: res.data.results }))
       .catch(err => console.log(err));
     }
+
   };
 
 
