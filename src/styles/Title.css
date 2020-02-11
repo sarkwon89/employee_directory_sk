@@ -10,7 +10,7 @@ html,body{
 }
 
 .title {
-    background-color: grey;
+    background-color: rgb(40, 77, 48);
     text-align: center;
     font-size: 3rem;
     border: solid black;
